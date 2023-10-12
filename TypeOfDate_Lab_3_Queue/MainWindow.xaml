@@ -1,0 +1,88 @@
+﻿<Window x:Class="TypeOfDate_Lab_3_Queue.MainWindow"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:TypeOfDate_Lab_3_Queue"
+        Style="{StaticResource VS2012WindowStyle}"
+        mc:Ignorable="d"
+        Title="Стек"
+        MaxHeight="800"
+        MinHeight="800"
+        MaxWidth="800"
+        MinWidth="800"
+        Height="800"
+        Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Stack (LIFO)" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="20" Style="{StaticResource LabelStyle2}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Margin="10">
+            <ListBox Style="{DynamicResource ListBoxStyle2}" Name="stackListBox" Width="175" />
+        </StackPanel>
+
+        <xctk:MaskedTextBox Name="stackInput" Grid.Row="2" Grid.Column="0" Margin="10" Background="#FF252525" 
+                            Foreground="#FF15F3CA" FontFamily="Comic Sans MS" FontSize="20"  Mask="0000000000"
+                            VerticalContentAlignment="Center" TextWrapping="Wrap" Style="{DynamicResource TextBoxStyle1}" TextAlignment="Center">
+            <TextBox.Effect>
+                <DropShadowEffect Color="#FF252525" Direction="300" ShadowDepth="7" Opacity="0.5" BlurRadius="9"/>
+            </TextBox.Effect>
+        </xctk:MaskedTextBox>
+        <Button Content="Push" Name="pushStackButton" Click="PushStack" Grid.Row="3" Grid.Column="0" Margin="10"
+                Style="{DynamicResource ButtonStyle1}" FontFamily="Comic Sans MS" FontSize="22" >
+            <Button.Effect>
+                <DropShadowEffect Color="#FF252525" Direction="300" ShadowDepth="7" Opacity="0.5" BlurRadius="9"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Pop" Name="popStackButton" Click="PopStack" Grid.Row="4" Grid.Column="0" Margin="10" 
+                Style="{DynamicResource ButtonStyle1}" FontFamily="Comic Sans MS" FontSize="22" >
+            <Button.Effect>
+                <DropShadowEffect Color="#FF252525" Direction="300" ShadowDepth="7" Opacity="0.5" BlurRadius="9"/>
+            </Button.Effect>
+        </Button>
+
+
+        <Border BorderBrush="#FF15F3CA"       BorderThickness="0.1,0,0.1,0"   Grid.Column="2" Grid.Row="1" Grid.RowSpan="4"/>
+        <Border BorderBrush="#FF15F3CA"       BorderThickness="0.1,0,0,0"   Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"/>
+
+
+        <Label Content="Queue (FIFO)" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="20" Style="{StaticResource LabelStyle2}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <StackPanel Style="{DynamicResource StackPanelStyle1}" Orientation="Horizontal" Grid.Row="1" Grid.Column="2" Grid.RowSpan="4" Margin="10">
+            <ListBox Name="queueListBox" Style="{DynamicResource ListBoxStyle2}" Width="175"/>
+        </StackPanel>
+
+        <xctk:MaskedTextBox Name="queueInput" Grid.Row="2" Grid.Column="3" Margin="10" Background="#FF252525" 
+                            Foreground="#FF15F3CA" FontFamily="Comic Sans MS" FontSize="20" Mask="0000000000"
+                            VerticalContentAlignment="Center" TextWrapping="Wrap" Style="{DynamicResource TextBoxStyle1}" TextAlignment="Center">
+            <TextBox.Effect>
+                <DropShadowEffect Color="#FF252525" Direction="300" ShadowDepth="7" Opacity="0.5" BlurRadius="9"/>
+            </TextBox.Effect>
+        </xctk:MaskedTextBox>
+        <Button Content="Enqueue" Name="enqueueButton" Click="Enqueue" Grid.Row="3" Grid.Column="3" Margin="10" 
+                Style="{DynamicResource ButtonStyle1}" FontFamily="Comic Sans MS" FontSize="22" >
+            <Button.Effect>
+                <DropShadowEffect Color="#FF252525" Direction="300" ShadowDepth="7" Opacity="0.5" BlurRadius="9"/>
+            </Button.Effect>
+        </Button>
+        <Button Content="Dequeue" Name="dequeueButton" Click="Dequeue" Grid.Row="4" Grid.Column="3" Margin="10" 
+                Style="{DynamicResource ButtonStyle1}" FontFamily="Comic Sans MS" FontSize="22" >
+            <Button.Effect>
+                <DropShadowEffect Color="#FF252525" Direction="300" ShadowDepth="7" Opacity="0.5" BlurRadius="9"/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>
