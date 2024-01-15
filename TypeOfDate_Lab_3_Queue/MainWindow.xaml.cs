@@ -28,12 +28,21 @@ namespace TypeOfDate_Lab_3_Queue
             InitializeComponent();
         }
 
+        private void ShowError(string message)
+        {
+            MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
         private void PushStack(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(stackInput.Text.Split('_')[0], out int value))
             {
                 stack.Push(value);
                 UpdateStackListBox();
+            }
+            else
+            {
+                ShowError("Введено некоректное значение");
             }
         }
 
@@ -44,6 +53,10 @@ namespace TypeOfDate_Lab_3_Queue
                 stack.Pop();
                 UpdateStackListBox();
             }
+            else
+            {
+                ShowError("Список пуст");
+            }
         }
 
         private void Enqueue(object sender, RoutedEventArgs e)
@@ -53,6 +66,10 @@ namespace TypeOfDate_Lab_3_Queue
                 queue.Enqueue(value);
                 UpdateQueueListBox();
             }
+            else
+            {
+                ShowError("Введено некоректное значение");
+            }
         }
 
         private void Dequeue(object sender, RoutedEventArgs e)
@@ -61,6 +78,10 @@ namespace TypeOfDate_Lab_3_Queue
             {
                 queue.Dequeue();
                 UpdateQueueListBox();
+            }
+            else
+            {
+                ShowError("Список пуст");
             }
         }
 

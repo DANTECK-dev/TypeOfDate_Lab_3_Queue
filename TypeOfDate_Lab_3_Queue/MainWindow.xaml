@@ -8,11 +8,11 @@
         Style="{StaticResource VS2012WindowStyle}"
         mc:Ignorable="d"
         Title="Стек"
-        MaxHeight="800"
-        MinHeight="800"
+        MaxHeight="700"
+        MinHeight="700"
         MaxWidth="800"
         MinWidth="800"
-        Height="800"
+        Height="700"
         Width="800">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
